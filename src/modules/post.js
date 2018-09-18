@@ -8,7 +8,7 @@ import {
   pender
 } from 'redux-pender'
 
-function getPostAPI(postId) {
+function getPostAPI (postId) {
   return axios.get(`https://jsonplaceholder.typicode.com/posts/${postId}`)
 }
 
@@ -34,6 +34,15 @@ export default handleActions({
           body
         }
       }
+    },
+    onCancel: (state, action) => {
+      return {
+        data: {
+          title: 'canceled',
+          body: 'canceled'
+        }
+      }
     }
+
   })
 }, initialState)

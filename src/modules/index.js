@@ -4,7 +4,6 @@ import {
 import counter from './counter'
 import post from './post'
 import {
-  pendenReducer,
   penderReducer
 } from 'redux-pender'
 
