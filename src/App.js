@@ -8,9 +8,14 @@ import * as postActions from './modules/post'
 
 class App extends Component {
 
-    loadData = () => {
+    loadData = async () => {
         const { PostActions, number } = this.props
-        PostActions.getPost(number)
+        try {
+            const response = await PostActions.getPost(number)
+            console.log(response)
+        } catch(e) {
+            console.log(e)
+        }
     }
 
     componentDidMount(){
